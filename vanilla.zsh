@@ -3,7 +3,7 @@ autoload -U add-zsh-hook
 add-zsh-hook -Uz chpwd (){ ls -a; }
 
 ######################################## Aliases ########################################
-ls --version &>/dev/null
+/bin/ls --version &>/dev/null
 if [ $? -eq 0 ]; then
   lsflags="--color --group-directories-first -F"
 else
