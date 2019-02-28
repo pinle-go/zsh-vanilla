@@ -2,12 +2,6 @@
 autoload -U add-zsh-hook
 add-zsh-hook -Uz chpwd (){ ls -a; }
 
-autoload -U colors && colors
-export PS1='%{$fg[yellow]%}$%{$reset_color%} '
-export RPROMPT='%{$fg[green]%}%3~%{$reset_color%} '
-
-[ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] && export PS1='%{$fg[cyan]%}${HOST%%.*}%{$reset_color%} '${PS1}
-
 ######################################## Aliases ########################################
 ls --version &>/dev/null
 if [ $? -eq 0 ]; then
