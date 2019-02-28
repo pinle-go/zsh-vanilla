@@ -3,17 +3,6 @@ autoload -U add-zsh-hook
 add-zsh-hook -Uz chpwd (){ ls -a; }
 
 ######################################## Aliases ########################################
-/bin/ls --version &>/dev/null
-if [ $? -eq 0 ]; then
-  lsflags="--color --group-directories-first -F"
-else
-  lsflags="-GF"
-export CLICOLOR=1
-fi
-
-alias ls="ls ${lsflags}"
-alias ll="ls ${lsflags} -l"
-alias la="ls ${lsflags} -la"
 alias h="history"
 alias hg="history -1000 | grep -i"
 alias ,="cd .."
