@@ -17,11 +17,11 @@ auto-ls () {
 
 zle -N auto-ls
 zle -N accept-line auto-ls
-chpwd_functions+=(auto-ls)
+# chpwd_functions+=(auto-ls)
 
 setopt PROMPT_SUBST
-PROMPT='%F{yellow}%m%f %F{green}:P%f '
-RPROMPT='%{$(shrink_path -t -f)%${#PWD}G%}'
+PROMPT='%F{yellow}%m%f %F{green}~%f '
+RPROMPT='%F{red}`shrink_path -t -f`%f'
 ######################################## Aliases ########################################
 alias h="history"
 alias hg="history -1000 | grep -i"
