@@ -7,7 +7,7 @@ alias la="exa -la"
 auto-ls () {
   if [[ $#BUFFER -eq 0 ]]; then
     zle && echo ""
-    exa -l
+    ls
     
     zle && zle redisplay
   else
