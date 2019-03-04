@@ -1,8 +1,23 @@
 ######################################## Extra ########################################
 alias l="exa"
+alias ls="exa"
 alias ll="exa -l"
 alias la="exa -la"
 
+auto-ls () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    zle && echo ""
+    exa -l
+    
+    zle && zle redisplay
+  else
+    zle .$WIDGET
+  fi
+}
+
+zle -N auto-ls
+zle -N accept-line auto-ls
+chpwd_functions+=(auto-ls)
 ######################################## Aliases ########################################
 alias h="history"
 alias hg="history -1000 | grep -i"
