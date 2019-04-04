@@ -41,6 +41,12 @@ alias gcl="git clone"
 
 alias pcsv="column -s, -t | less -#2 -N -S"
 
+pawk(){
+    fields="$(sed -E 's/(^|,)/ \1\$/g'<<<"$1")"
+    shift
+    awk "{print $fields}" "$@"
+}
+
 ######################################## History settings ########################################
 HISTFILE=~/.history-zsh
 HISTSIZE=10000
